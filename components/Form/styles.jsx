@@ -11,7 +11,7 @@ export const Form = styled.form`
     font-size: 1.25rem;
     line-height: 1.5em;
     font-weight: 700;
-    color: #ddd;
+    color: #000;
     margin-bottom: 30px;
   }
 `

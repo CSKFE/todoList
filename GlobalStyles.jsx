@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
     width:100%;
     height: 100%;
     overflow-x: hidden;
-    background: linear-gradient(180deg, rgba(255,139,237,1) 0%, rgba(251,157,127,1) 100%) no-repeat;
+    /* background: linear-gradient(180deg, rgba(255,139,237,1) 0%, rgba(251,157,127,1) 100%) no-repeat; */
   }
 
   fieldset {
@@ -61,5 +61,5 @@ export const NoData = styled.div`
   font-size: 1rem;
   line-height: 1.5em;
   font-weight: 700;
-  color: beige;
+  color: #000;
 `
