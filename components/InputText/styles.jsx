@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const InputGroup = styled.label`
-  width: calc(100% - 60px);
+  width: 100%;
 
   & input {
     width: 100%;

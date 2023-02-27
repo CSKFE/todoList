@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { Form as FormElement } from './styles'
-import { InputGroup } from '../Input/styles'
+import { InputGroup } from '../InputText/styles'
 
 const Form = ({ setList }) => {
   const [todos, setTodos] = useState('')
@@ -14,6 +14,7 @@ const Form = ({ setList }) => {
     setList(prev => [...prev, {
       id: countRef.current,
       content: todos,
+      checked: false,
       editMode: false
     }])
     setTodos('')

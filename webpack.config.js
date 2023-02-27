@@ -6,7 +6,11 @@ module.exports = {
   mode: 'development',
   devtool: 'eval',
   resolve: {
-    extensions: ['.jsx', '.js']
+    alias: {
+      '@components': path.resolve(__dirname, 'components'), 
+      '@pages': path.resolve(__dirname, 'pages'), 
+    },
+    extensions: ['.jsx', '.js'],
   },
   entry: {
     app: './client'
