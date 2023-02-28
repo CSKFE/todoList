@@ -1,13 +1,14 @@
 import React, { useState, useRef } from 'react'
 import { Form as FormElement } from './styles'
 import { InputGroup } from '../InputText/styles'
-import WarningMessage from '../Warning'
+import WarningMessage from '../WarningMessage'
 const Form = ({ setList }) => {
   const [todos, setTodos] = useState('')
   const [isTodos, setIsTodos] = useState(true)
   const countRef = useRef(0)
   const inputRef = useRef()
   const onChangeInput = (e) => {
+    e.target.value ? setIsTodos(true) : setIsTodos(false)
     setTodos(e.target.value)
   }
   const onSubmitlist = (e) => {

@@ -2,7 +2,7 @@ import React, { useState, useCallback, memo, useRef } from 'react'
 import { List } from './styles'
 import { ContentContainer, ButtonWrapper } from './styles'
 import { InputGroup } from '../InputText/styles'
-import WarningMessage from '../Warning/index';
+import WarningMessage from '../WarningMessage'
 const ListItem = memo(({ todos, setList, list }) => {
   const [editTodos, setEditTodos] = useState('')
   const [isEditToggle, setIsEditToggle] = useState(false)
