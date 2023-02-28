@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const List = styled.li`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   &.complete {
     text-decoration: line-through;

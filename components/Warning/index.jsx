@@ -1,9 +1,11 @@
 import React from 'react'
 import { Warning as WarningCompo } from './styles'
-const Warning = () => {
+const WarningMessage = ({children}) => {
   return (
-    <WarningCompo />
+    <WarningCompo>
+      {children}
+    </WarningCompo>
   )
 }
 
-export default Warning
+export default WarningMessage
