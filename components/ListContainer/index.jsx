@@ -3,17 +3,20 @@ import ListItem from '../List/index'
 import { NoData } from '../../GlobalStyles'
 import { ListContainer as Container } from './styles'
 
-const ListContainer = ({ todos, setList }) => {
+const ListContainer = ({ todos, setList, curIndex }) => {
   return (
     <Container>
       {todos.length === 0
-        ? <NoData>할 일이 없습니다.</NoData>
+        ? null
         : <ul>
         {todos.length > 0 && todos.map((list, idx) => {
-          return <ListItem key={idx} todos={todos} setList={setList} list={list} />
+          return list.delete 
+          ? null 
+          : <ListItem key={idx} todos={todos} setList={setList} list={list} /> 
         })}
       </ul>
       }
+      {todos.filter(e => !e.delete).length === 0 && <NoData>할 일이 없습니다.</NoData>}
     </Container>
   )
 }

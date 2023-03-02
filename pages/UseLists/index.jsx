@@ -1,12 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react'
 import ListContainer from '../../components/ListContainer/index';
-
-const UseLists = ({ todos, setList }) => {
+const UseLists = memo(({ todos, setList, curIndex }) => {
   return (
-    <div>
-      <ListContainer todos={todos} setList={setList} />
-    </div>
+    <ListContainer todos={todos} setList={setList} curIndex={curIndex} />
   )
-}
+})
 
 export default UseLists

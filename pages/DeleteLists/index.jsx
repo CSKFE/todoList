@@ -1,9 +1,9 @@
-import React from 'react'
-
-const DeleteLists = () => {
+import React, { memo } from 'react'
+import DeleteListContainer from '../../components/ListContainer/DeleteListContainer'
+const DeleteLists = memo(({ todos, setList, curIndex }) => {
   return (
-    <div>삭제된 리스트들</div>
+    <DeleteListContainer todos={todos} setList={setList} curIndex={curIndex} />
   )
-}
+})
 
 export default DeleteLists

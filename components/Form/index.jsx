@@ -22,7 +22,8 @@ const Form = ({ setList }) => {
       id: countRef.current,
       content: todos,
       checked: false,
-      editMode: false
+      editMode: false,
+      delete: false
     }])
     setTodos('')
     countRef.current++

@@ -63,3 +63,7 @@ export const NoData = styled.div`
   font-weight: 700;
   color: #000;
 `
+
+export const ListWrap = styled.div`
+  width: 100%;
+`

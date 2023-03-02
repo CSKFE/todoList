@@ -2,10 +2,10 @@ import React from 'react'
 import { TabWrap } from './styles'
 import Tabs from './Tabs'
 
-const TabContainer = ({ tabs }) => {
+const TabContainer = ({ tabArr, setTab, setIndex }) => {
   return (
     <TabWrap>
-      { tabs.map((el, idx) => <Tabs key={idx} tabs={el} className={el.show} />) }
+      { tabArr.map((el, idx) => <Tabs key={idx} setTab={setTab} tabArr={tabArr} tab={el} setIndex={setIndex} idx={idx} />) }
     </TabWrap>
   )
 }

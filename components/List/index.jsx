@@ -23,7 +23,9 @@ const ListItem = memo(({ todos, setList, list }) => {
 
   const onClickDeleteList = (idx) => {
     if(isEditToggle) return
-    setList(todos.filter(todos => todos.id !== idx))
+    const originList = [...todos]
+    originList[idx].delete = true
+    setList(originList)
   }
 
   const onEditComplete = (list) => {
