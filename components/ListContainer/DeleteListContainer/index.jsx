@@ -2,7 +2,7 @@ import React from 'react'
 import { ListContainer } from '../styles';
 import DeleteListItem from '../../List/DeleteList/index';
 import { NoData } from '../../../GlobalStyles';
-const DeleteListContainer = ({ todos, setList, curIndex }) => {
+const DeleteListContainer = ({ todos, setList, curIndex, isChecked, setIsChecked }) => {
   console.log(todos.filter(e => e.delete).length)
   return (
     <ListContainer>
@@ -10,7 +10,7 @@ const DeleteListContainer = ({ todos, setList, curIndex }) => {
         {
           todos.map((e, idx) => {
             return e.delete
-            ? <DeleteListItem key={idx} list={e} />
+            ? <DeleteListItem key={idx} list={e} isChecked={isChecked} setIsChecked={setIsChecked} />
             : null
           })
         }

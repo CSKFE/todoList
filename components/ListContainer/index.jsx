@@ -3,7 +3,7 @@ import ListItem from '../List/index'
 import { NoData } from '../../GlobalStyles'
 import { ListContainer as Container } from './styles'
 
-const ListContainer = ({ todos, setList, curIndex }) => {
+const ListContainer = ({ todos, setList, curIndex, isChecked, setIsChecked }) => {
   return (
     <Container>
       {todos.length === 0
@@ -12,7 +12,7 @@ const ListContainer = ({ todos, setList, curIndex }) => {
         {todos.length > 0 && todos.map((list, idx) => {
           return list.delete 
           ? null 
-          : <ListItem key={idx} todos={todos} setList={setList} list={list} /> 
+          : <ListItem key={idx} todos={todos} setList={setList} list={list} isChecked={isChecked} setIsChecked={setIsChecked} /> 
         })}
       </ul>
       }

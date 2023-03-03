@@ -21,7 +21,6 @@ export const GlobalStyles = createGlobalStyle`
     width:100%;
     height: 100%;
     overflow-x: hidden;
-    /* background: linear-gradient(180deg, rgba(255,139,237,1) 0%, rgba(251,157,127,1) 100%) no-repeat; */
   }
 
   fieldset {
@@ -42,6 +41,12 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 32px;
     padding: 4px 10px;
     cursor: pointer;
+    font-size: 0.75rem;
+    line-height: 12px;
+    transition: hover 0.5s ease-in-out;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
   }
 
   #root {
@@ -62,6 +67,9 @@ export const NoData = styled.div`
   line-height: 1.5em;
   font-weight: 700;
   color: #000;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
 `
 
 export const ListWrap = styled.div`

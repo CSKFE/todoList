@@ -1,12 +1,11 @@
 import React, { useState, useCallback, memo, useRef } from 'react'
 import { List } from './styles'
-import { ContentContainer, ButtonWrapper } from './styles'
+import { ContentContainer, ButtonWrapper, Label, DateWrapper } from './styles'
 import { InputGroup } from '../InputText/styles'
 import WarningMessage from '../WarningMessage'
-const ListItem = memo(({ todos, setList, list }) => {
+const ListItem = memo(({ todos, setList, list, isChecked, setIsChecked }) => {
   const [editTodos, setEditTodos] = useState('')
   const [isEditToggle, setIsEditToggle] = useState(false)
-  const [isChecked, setIsChecked] = useState(false)
   const [isContent, setIsContent] = useState(true)
   const inputRef = useRef([])
   const onEditModeToggle = useCallback(() => {
@@ -47,11 +46,11 @@ const ListItem = memo(({ todos, setList, list }) => {
   }
 
   return (
-    <List className={isChecked ? 'complete' : ''}>
+    <List className={list.checked ? 'complete' : ''}>
       <ContentContainer className='content-container'>
-        <label htmlFor={`chk${list.id}`}>
+        <Label htmlFor={`chk${list.id}`}>
           <input type="checkbox" id={`chk${list.id}`} onChange={onCheckedToggle(list.id)} />
-        </label>
+        </Label>
         <InputGroup>
           {
             isEditToggle
@@ -63,11 +62,14 @@ const ListItem = memo(({ todos, setList, list }) => {
       <ButtonWrapper className="btn-wrap">
         {
           isEditToggle
-          ? <button type='button' onClick={() => onEditComplete(list)}>완료</button>
-          : <button type='button' onClick={onEditModeToggle}>수정</button>
+            ? <button type='button' onClick={() => onEditComplete(list)}>완료</button>
+            : <button type='button' onClick={onEditModeToggle}>수정</button>
         }
         <button type='button' onClick={() => onClickDeleteList(list.id)}>삭제</button>
       </ButtonWrapper>
+      <DateWrapper>
+        {<span>생성일{list.date}</span>}
+      </DateWrapper>
       {!isContent && <WarningMessage>내용을 입력해주세요.</WarningMessage>}
     </List>
   )

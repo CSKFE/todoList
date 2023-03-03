@@ -8,6 +8,7 @@ import TabContainer from '../../components/TabContainer'
 const App = () => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0)
   const [list, setList] = useState([])
+  const [isChecked, setIsChecked] = useState(false)
   const [tab, setTab] = useState([
     {
       current: true,
@@ -24,7 +25,9 @@ const App = () => {
       <TodoContainer>
         <Form setList={setList} />
         <TabContainer tabArr={tab} setTab={setTab} setIndex={setCurrentTabIndex} />
-        {currentTabIndex ? <DeleteLists todos={list} setList={setList} curIndex={currentTabIndex} /> : <UseLists todos={list} setList={setList} curIndex={currentTabIndex} />}
+        {currentTabIndex 
+          ? <DeleteLists todos={list} setList={setList} curIndex={currentTabIndex} isChecked={isChecked} setIsChecked={setIsChecked} /> 
+          : <UseLists todos={list} setList={setList} curIndex={currentTabIndex} isChecked={isChecked} setIsChecked={setIsChecked} />}
       </TodoContainer>
     </>
   )
